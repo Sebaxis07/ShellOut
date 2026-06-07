@@ -1,0 +1,188 @@
+/* App-specific custom animations & page styles */
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: calc(100vh - var(--header-height));
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 0;
+    min-height: auto;
+  }
+}
+
+.customizer-workspace {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.phone-mockup-wrapper {
+  position: relative;
+  width: 250px;
+  height: 480px;
+  background-color: #0d0d0d;
+  border-radius: 40px;
+  border: 8px solid #262626;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-camera-island {
+  position: absolute;
+  top: 15px;
+  width: 90px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+.case-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.case-texture-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%);
+  z-index: 10;
+}
+
+.uploaded-image-preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.custom-text-preview {
+  position: absolute;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+  cursor: grab;
+  z-index: 12;
+  white-space: nowrap;
+}
+
+/* Sidebar Drawer for Cart */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-primary);
+  border-left: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* Catalog Filter Tags */
+.filter-tag {
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+}
+
+.filter-tag.active, .filter-tag:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* Reviews Upload Area */
+.upload-placeholder {
+  border: 2px dashed var(--border-medium);
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.upload-placeholder:hover {
+  border-color: var(--text-primary);
+}
+
+/* Responsive Grid for Account Settings Tab */
+.account-settings-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .account-settings-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Responsive adjustments for Header navigation and layout on mobile */
+@media (max-width: 768px) {
+  header .container {
+    height: auto !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  header nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px !important;
+  }
+}
